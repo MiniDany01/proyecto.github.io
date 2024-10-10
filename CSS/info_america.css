@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("../Imagenes/background.jpeg");
+    background-repeat: repeat-y;
+    text-align: center;
+    margin: 0;
+    height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+    position: relative;
+}
+
+h1 {
+    font-size: 64px; /* Tamaño grande para el título */
+    color: white; /* Color blanco para que destaque */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Alinea elementos en columna */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    font-size: 24px;
+    color: white;
+    width: 75%;
+    margin: auto; /* Centra horizontalmente el contenedor */
+    text-align: justify;
+}
+
+.svg-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.svg-container:hover {
+    transform: scale(1.1);
+}

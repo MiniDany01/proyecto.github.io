@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("../Imagenes/background.jpeg");
+    background-repeat: repeat-y;   
+    color: black;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Configura el número de columnas automáticamente */
+    gap: 50px; /* Espacio entre los contenedores */
+}
+
+.container {
+    width: 150px;
+    height: 100px;
+    border: 2px solid #e8e8e8;
+    overflow: hidden;
+    transition: height .5s;
+    interpolate-size: allow-keywords;
+    background-color: #e8e8e8;
+}   
+
+.container:hover {
+    background-color: #e8e8e8;
+    height: auto;
+}
+
+img { 
+    height: 100px;
+    width: 150px;
+}
+
+.mundo {
+    transition: transform 0.3s;
+    object-fit: cover;
+}
+
+.mundo:hover {
+    transform: scale(1.05);
+}
+
+a {
+    text-decoration: none;
+}
+
+.lider {
+    object-fit: contain;
+}

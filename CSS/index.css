@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 97vh;
+    width: 99vw;
+    gap: 5px; /* Añadimos un pequeño espacio entre las cards */
+}
+
+.cards {
+    position: relative;
+    flex: 1;
+    height: 100%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    color: white;
+    font-size: 2rem;
+    transition: flex 0.5s ease-in-out, transform 0.5s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.cards:hover {
+    flex: 3; /* Las tarjetas se expanden en hover */
+    transform: scale(1.01); /* Le da un efecto de ampliación */
+    z-index: 1; /* Hace que la tarjeta que está en hover quede por encima */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8); /* Sombra más intensa al hacer hover */
+}
+
+.cards::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1;
+}
+
+.cards[id="Asia"]::before {
+    background-image: url('https://assets.lummi.ai/assets/QmPmU11fGGPBzwkehd9CE2nGySo2X6iqAuviGrEUDCHpdy?auto=format&w=1500');
+}
+
+.cards[id="America"]::before {
+    background-image: url('https://assets.lummi.ai/assets/QmY6bW9A7QwZWtZQFRgQpz1Hvu6nXKvnjdWtfqF14BchSW?auto=format&w=1500');
+}
+
+.cards[id="Europa"]::before {
+    background-image: url('https://assets.lummi.ai/assets/QmZyeg58iA1qLhGnAd8gy3VGWJokfRtaenA5hB9pbZpDaF?auto=format&w=1500');
+}
+
+.cards:hover::before {
+    opacity: 1;
+}
+
+.boton {
+    display: none;
+}
+
+.cards:hover .boton {
+    cursor: pointer;
+    z-index: 1;
+    display: block;
+    position: absolute;
+    height: 30px;
+    width: auto;
+    bottom: 10px;
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255,0.9);
+    transition: color 0.5s ease-in-out;
+    font-size: 25px;
+}
+
+.boton::before {
+    opacity: 0.5;
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    transform: translate(-4%);
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.boton:hover::before {
+    background-color: red;
+    opacity: 1;
+    width: 100%;
+}
+
+.boton:hover {
+    color: red
+}
